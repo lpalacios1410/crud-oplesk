@@ -17,8 +17,8 @@ COPY . .
 EXPOSE 5000
 
 # Variable de entorno para Flask
-# ENV FLASK_APP=app.py
-# ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
 
 # Comando para iniciar la app
 CMD ["python", "run"]
