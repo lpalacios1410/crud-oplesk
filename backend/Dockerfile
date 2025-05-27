@@ -5,7 +5,7 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # Copia los archivos de requerimientos
-COPY requirements.txt ./
+COPY requirements.txt .
 
 # Instala las dependencias
 RUN pip install --no-cache-dir -r requirements.txt
@@ -17,8 +17,8 @@ COPY . .
 EXPOSE 5000
 
 # Variable de entorno para Flask
-ENV FLASK_APP=app.py
-ENV FLASK_RUN_HOST=0.0.0.0
+# ENV FLASK_APP=app.py
+# ENV FLASK_RUN_HOST=0.0.0.0
 
 # Comando para iniciar la app
-CMD ["flask", "run"]
+CMD ["python", "run"]
