@@ -20,7 +20,7 @@ init_routes(app) # Inicializamos las rutas de la aplicacion
 
 if __name__ == '__main__':
     app.run(debug=True) # Ejecutamos la aplicacion en modo debug
-   # app.run ( host'0.0.0.0', port=5000) # Ejecutamos la aplicacion en modo debug
+    app.run (host='0.0.0.0', port=5000) # Ejecutamos la aplicacion en modo debug
 
 # # Test de conexión a la base de datos
 

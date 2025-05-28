@@ -1,40 +1,43 @@
+version: "3.9"
+
 services:
+  db:
+    image: postgres:15
+    container_name: crud-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: flask_crud
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
   backend:
     build: ./backend
     container_name: crud-backend
+    environment:
+      - SQLALCHEMY_DATABASE_URI=postgresql://postgres:postgres@db:5432/flask_crud
+      - FLASK_ENV=development
     ports:
       - "5000:5000"
-    environment:
-      - DATABASE_HOST=db
-      - DATABASE_PORT=5432
-      - DATABASE_NAME=flask_crud
-      - DATABASE_USER=postgres
-      - DATABASE_PASSWORD=postgres
     depends_on:
       - db
     restart: always
+    volumes:
+      - ./backend:/app
 
   frontend:
     build: ./frontend
     container_name: crud-frontend
     ports:
-      - "8080:8080"
+      - "80:80"
     depends_on:
       - backend
     restart: always
-
-  db:
-    image: postgres:15
-    container_name: crud-db
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=flask_crud
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-    restart: always
+      - ./frontend:/app
 
 volumes:
   postgres_data:
