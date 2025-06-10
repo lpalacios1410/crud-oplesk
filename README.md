@@ -81,7 +81,7 @@ Si quieres contribuir, haz un fork y envía tus pull requests.
 ## 📝 Autor
 
 **Luis Palacios**  
-🐙 [GitHub][https://github.com/lpalacios1410]
+🐙 [GitHub] - [https://github.com/lpalacios1410]
 
 ---
 
@@ -94,7 +94,7 @@ Si quieres contribuir, haz un fork y envía tus pull requests.
 - [x] Eliminar usuario
 - [x] Buscar usuario
 - [x] Actualizar usuario
-- [x] Rruncar el exeso de caracteres a max 10
+- [x] Truncar los caracteres a max 10
 - [x] Base datos aws
 
 
