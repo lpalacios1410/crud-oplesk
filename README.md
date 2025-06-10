@@ -1,6 +1,7 @@
 
 # crud_oplesk_final  
 ## Proyecto CRUD con React, Flask, PostgreSQL, Docker y AWS-EC2
+## EC2 AWS [(http://18.221.135.15)]
 
 ---
 
